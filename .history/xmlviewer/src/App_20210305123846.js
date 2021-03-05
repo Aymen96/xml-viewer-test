@@ -6,12 +6,8 @@ const xml =
 
 function App() {
   return (
-    <div className="App" style={{ textAlign: 'left' }}>
-      <XMLViewer
-        collapsible={true}
-        xml={xml}
-        theme={{ elementPadding: '100px' }}
-      />
+    <div className="App">
+      <XMLViewer xml={xml} />
     </div>
   );
 }

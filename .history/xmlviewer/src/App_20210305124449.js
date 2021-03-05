@@ -6,7 +6,7 @@ const xml =
 
 function App() {
   return (
-    <div className="App" style={{ textAlign: 'left' }}>
+    <div className="App" style={{text-align:left}}>
       <XMLViewer
         collapsible={true}
         xml={xml}
