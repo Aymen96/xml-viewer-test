@@ -23,7 +23,7 @@ class XMLViewer extends Component {
     };
   }
   render() {
-    const { xml, theme, invalidXml, indentSize, collapsible } = this.props;
+    const { xml, theme, invalidXml, indentSize, isCollapsible } = this.props;
     let json = null;
 
     const customTheme = { ...defaultTheme, ...theme };
@@ -37,7 +37,7 @@ class XMLViewer extends Component {
       return invalidXml;
     }
     return (
-      <div {...this.props}>
+      <div>
         {json.declaration && (
           <DeclarationElement
             theme={customTheme}
@@ -49,7 +49,7 @@ class XMLViewer extends Component {
           theme={customTheme}
           indentSize={indentSize}
           indentation=""
-          collapsible={collapsible}
+          isCollapsible={isCollapsible}
         />
       </div>
     );
@@ -60,13 +60,13 @@ XMLViewer.propTypes = {
   xml: PropTypes.string.isRequired,
   theme: PropTypes.object,
   indentSize: PropTypes.number,
-  collapsible: PropTypes.bool,
+  isCollapsible: PropTypes.bool,
 };
 
 XMLViewer.defaultProps = {
   theme: {},
   indentSize: 2,
-  collapsible: false,
+  isCollapsible: false,
 };
 
 export default XMLViewer;

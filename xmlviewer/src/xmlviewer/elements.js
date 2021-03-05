@@ -37,17 +37,17 @@ const Element = memo(
     theme,
     indentation,
     indentSize,
-    collapsible,
+    isCollapsible,
   }) => {
     const [collapsed, toggleCollapse] = useState(false);
 
-    const cursor = collapsible && elements ? 'pointer' : 'text';
+    const cursor = isCollapsible && elements ? 'pointer' : 'text';
 
     return (
       <div
         style={{ whiteSpace: 'pre', cursor }}
         onClick={(event) => {
-          if (!collapsible || !elements) {
+          if (!isCollapsible || !elements) {
             return;
           }
           event.stopPropagation();
@@ -71,7 +71,7 @@ const Element = memo(
               theme={theme}
               indentation={indentation + getIndentationString(indentSize)}
               indentSize={indentSize}
-              collapsible={collapsible}
+              isCollapsible={isCollapsible}
             />
           </span>
         )}
@@ -94,10 +94,10 @@ Element.propTypes = {
   theme: PropTypes.object.isRequired,
   indentation: PropTypes.string.isRequired,
   indentSize: PropTypes.number.isRequired,
-  collapsible: PropTypes.bool.isRequired,
+  isCollapsible: PropTypes.bool.isRequired,
 };
 
-const getElement = (theme, indentation, indentSize, collapsible) => (
+const getElement = (theme, indentation, indentSize, isCollapsible) => (
   element,
   index
 ) => {
@@ -116,7 +116,7 @@ const getElement = (theme, indentation, indentSize, collapsible) => (
           theme={theme}
           indentation={indentation}
           indentSize={indentSize}
-          collapsible={collapsible}
+          isCollapsible={isCollapsible}
         />
       );
     case 'comment':
@@ -153,9 +153,9 @@ const getElement = (theme, indentation, indentSize, collapsible) => (
 };
 
 const Elements = memo(
-  ({ elements, theme, indentation, indentSize, collapsible }) => {
+  ({ elements, theme, indentation, indentSize, isCollapsible }) => {
     return elements.map(
-      getElement(theme, indentation, indentSize, collapsible)
+      getElement(theme, indentation, indentSize, isCollapsible)
     );
   }
 );
@@ -165,7 +165,7 @@ Elements.propTypes = {
   theme: PropTypes.object.isRequired,
   indentation: PropTypes.string.isRequired,
   indentSize: PropTypes.number.isRequired,
-  collapsible: PropTypes.bool.isRequired,
+  isCollapsible: PropTypes.bool.isRequired,
 };
 
 export default Elements;
