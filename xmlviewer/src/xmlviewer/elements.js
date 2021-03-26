@@ -1,5 +1,5 @@
 import React, { memo, useState } from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { elementType } from 'prop-types';
 import Attributes from './attributes';
 import {
   CdataElement,
@@ -7,6 +7,7 @@ import {
   InstructionElement,
   TextElement,
 } from './parts';
+import { equals } from './utils';
 
 function getIndentationString(size) {
   return new Array(size + 1).join(' ');
@@ -37,7 +38,7 @@ const Element = memo(
     theme,
     indentation,
     indentSize,
-    isCollapsible,
+    isCollapsible
   }) => {
     const [collapsed, toggleCollapse] = useState(false);
 
@@ -45,7 +46,11 @@ const Element = memo(
 
     return (
       <div
-        style={{ whiteSpace: 'pre', cursor }}
+        style={{
+          whiteSpace: 'pre',
+          cursor,
+          backgroundColor: isChange ? 'red' : 'white',
+        }}
         onClick={(event) => {
           if (!isCollapsible || !elements) {
             return;
@@ -97,10 +102,12 @@ Element.propTypes = {
   isCollapsible: PropTypes.bool.isRequired,
 };
 
-const getElement = (theme, indentation, indentSize, isCollapsible) => (
-  element,
-  index
-) => {
+const getElement = (
+  theme,
+  indentation,
+  indentSize,
+  isCollapsible
+) => (element, index) => {
   switch (element.type) {
     case 'text':
       return (

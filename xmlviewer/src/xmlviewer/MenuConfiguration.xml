@@ -1,0 +1,302 @@
+<MenuConfiguration>
+  <node name="MASTER_DATA_NODE">
+    <node name="CALENDARS_NODE">
+      <item name="BUSINESS_CALENDAR" type="REPORT" />
+      <item name="CALENDAR_SETUP" type="REPORT" />
+    </node>
+    <node name="DEPOTS_NODE">
+      <item name="DEPOT" type="REPORT" />
+      <item name="DEPOT_FAMILY" type="REPORT" />
+      <item name="DEPOT_SUBSTITUTION_GROUP" type="REPORT" />
+    </node>
+    <node name="CHANNELS_NODE">
+      <item name="CUSTOMER" type="REPORT" />
+      <item name="CHANNEL_MAPPING" type="REPORT" />
+    </node>
+    <node name="PARTS_NODE">
+      <item name="PART_WORKBENCH" type="REPORT" />
+      <item name="PART_DEPOT" type="REPORT" />
+      <item name="PSG_PART_SUBSTITUTION_GROUP" type="REPORT" />
+      <item name="PROCESS_SETUP" type="REPORT" />
+      <item name="PROCESS_SHARE" type="REPORT" />
+      <item name="PROCESS_SPLIT" type="REPORT" />
+      <item name="MATERIAL_USAGE" type="REPORT" />
+      <item name="INVERTED_BOM" type="REPORT" />
+      <item name="MULTI_LEVEL_BOM" type="REPORT" />
+      <item name="INVERTED_MULTI_LEVEL_BOM" type="REPORT" />
+      <item name="INV_CHANNEL" type="REPORT" />
+      <item name="PART_FAMILY" type="REPORT" />
+      <item name="FAMILY_SETUP" type="REPORT" />
+      <item name="SUPPLIER" type="REPORT" />
+      <item name="CONNECTED_COMPONENT" type="REPORT" />
+    </node>
+    <node name="CAPACITIES_NODE">
+      <item name="CAPACITY_WORKBENCH" type="REPORT" />
+      <item name="CAPACITY_PROFILE" type="REPORT" />
+      <item name="CAPACITY_ADJUSTMENT" type="REPORT" />
+      <item name="CAPACITY_FAMILY" type="REPORT" />
+      <item name="CAPACITY_USAGE" type="REPORT" />
+      <item name="INVERTED_BOC" type="REPORT" />
+    </node>
+    <node name="MISC_NODE">
+      <item name="LFD_CONF" type="REPORT" />
+      <item name="MEMO_ESCALATION_LEVELS" type="REPORT" />
+    </node>
+  </node>
+  <node name="TRANSACTIONAL_DATA_NODE">
+    <node name="COSTS">
+        <item name="PART_DEPOT_COST_ELEMENT" type="REPORT"/>
+        <item name="PROCESS_COST_ELEMENT" type="REPORT"/>
+        <item name="CAPACITY_COST_ELEMENT" type="REPORT"/>        
+    </node>    
+    <node name="DEMAND_NODE">
+      <item name="CO" type="REPORT" />
+      <item name="SFC" type="REPORT" />
+      <item name="ADDTL_DMD" type="REPORT" />
+      <item name="PRIMARY_DEMAND" type="REPORT" />
+    </node>
+    <node name="SUPPLY_NODE">
+      <item name="INV" type="REPORT" />
+      <item name="PO" type="REPORT" />
+      <item name="IWT" type="REPORT" />
+      <item name="WO" type="REPORT" />
+      <item name="FPO" type="REPORT" />
+      <item name="ADDTL_SUPPLY" type="REPORT" />
+      <item name="FIRM_SUPPLY" type="REPORT" />
+    </node>
+    <node name="SETTINGS_NODE">
+      <item name="SUPPLY_ORDER_STATUS_MAPPING" type="REPORT" />
+    </node>
+    <node name="RESERVATION_NODE">
+      <item name="IR" type="REPORT" />
+      <item name="CR" type="REPORT" />
+      <item name="RESERVATION" type="REPORT" />
+    </node>
+    <node name="ALLOCATION_NODE">
+      <item name="HARD_ALLOCATION" type="REPORT" />
+    </node>
+    <node name="SUPPLIER_COMMITS_NODE">
+      <item name="COMMIT_TYPE" type="REPORT" />
+      <item name="COLLABORATION_SUPPLIER" type="REPORT" />
+      <item name="MATERIAL_COMMIT" type="REPORT" />
+      <item name="SUPPLIER_BTD" type="REPORT" />
+      <item name="NET_SUPPLIER_COMMIT" type="COMMAND" />
+    </node>
+    <node name="EXTERNAL_COMMITS_NODE">
+      <item name="SAVE_MATERIAL_COMMIT" type="COMMAND" />
+      <item name="LOAD_MATERIAL_COMMIT" type="COMMAND" />
+      <item name="CAPACITY_COMMIT" type="REPORT" />
+      <item name="SAVE_CAPACITY_COMMIT" type="COMMAND" />
+      <item name="LOAD_CAPACITY_COMMIT" type="COMMAND" />
+    </node>
+  </node>
+  <node name="DEMAND_PREPROCESSING_NODE">
+    <node name="REPORTS">
+      <item name="FC_TYPE" type="REPORT" />
+      <item name="FORECAST" type="REPORT" />
+      <item name="BTD" type="REPORT" />
+      <item name="FC_NETTING_WORKBENCH" type="REPORT" />
+    </node>
+	<node name="SETTINGS_NODE">
+      <item name="PRIO_MAP" type="REPORT" />
+    </node>
+    <node name="COMMANDS">
+      <item name="CREATE_SFC" type="COMMAND" />
+      <item name="NET_FORECASTS" type="COMMAND" />
+      <item name="FC_CLASSIFICATION" type="COMMAND" />
+      <item name="FC_ALLOCATION" type="COMMAND" />
+      <item name="UPDATE_PRIMARY_DEMAND" type="COMMAND" />
+      <item name="UPDATE_PRIORITY" type="COMMAND" />
+      <item name="PLAN_SINGLE_ORDER" type="COMMAND" />
+      <item name="SLICE_SFC" type="COMMAND" />
+    </node>
+  </node>
+  <node name="PLANNING_TRIGGERS_NODE">
+    <node name="COMMANDS">
+      <item name="CREATE_PRIMARY_DEMAND" type="COMMAND" />
+      <item name="PRIORITY_MANAGER" type="PRIORITY_MANAGER" />
+      <item name="EXECUTE_PRIORITY_PATTERN" type="COMMAND" />
+      <item name="EXECUTE_PRIORITY_RULE" type="COMMAND" />
+      <item name="ADJUST_PRIMARY_DEMAND" type="COMMAND" />
+      <item name="CREATE_FIRM_SUPPLY" type="COMMAND" />
+      <item name="CREATE_RESERVATION" type="COMMAND" />
+      <item name="RUN_CBP" type="COMMAND" />
+      <item name="RUN_CONFIGURABLE_LFD" type="COMMAND" />
+      <item name="UNCONSTRAINED_PLAN" type="COMMAND" />
+      <item name="CREATE_PEGGING" type="COMMAND" />
+      <item name="PUSH_SUPPLY" type="COMMAND" />
+      <item name="CALCULATE_RELEASE_STATUS" type="COMMAND" />
+      <item name="SHORTAGE_ANALYSIS" type="COMMAND" />
+      <item name="FC_COMMIT" type="COMMAND" />
+    </node>
+  </node>
+  <node name="DEMAND_REPORTS_NODE">
+    <node name="REPORTS">
+      <item name="COCKPIT" type="COCKPIT" />
+      <item name="DELIVERY_WORKBENCH" type="REPORT" />
+      <item name="RESERVATION_WORKBENCH" type="REPORT" />
+      <item name="TOP_DOWN_PEGGING" type="REPORT" />
+      <item name="PUSH_ALERT" type="REPORT" />
+      <item name="DEMAND_BOTTOM_UP_PEGGING" type="REPORT" />
+      <item name="DEMAND_FLOW_PEGGING" type="REPORT" />
+      <item name="DEMAND_COMMIT_WORKBENCH" type="REPORT" />
+      <item name="DELIVERY_COMPONENT_WORKBENCH" type="REPORT" />
+    </node>
+  </node>
+  <node name="SUPPLY_REPORTS_NODE">
+    <node name="REPORTS">
+      <item name="REPLENISHMENT_WORKBENCH" type="REPORT" />
+      <item name="REPLENISHMENT_PROPOSAL" type="REPORT" />
+      <item name="REPLENISHMENT_PROPOSAL_DETAIL" type="REPORT" />
+      <item name="REPLENISHMENT_ELEMENTS_WORKBENCH" type="REPORT" />
+      <item name="PROCESS_REPLENISHMENT_WORKBENCH" type="REPORT" />
+      <item name="AGGREGATED_ROC" type="REPORT" />
+      <item name="GRAPHICAL_DATA_INVENTORY" type="REPORT" />
+      <item name="INVPIT" type="REPORT" />
+      <item name="SUPPLY_WORKBENCH" type="REPORT" />
+      <item name="PSG_SUBSTITUTION_ORDERS" type="REPORT" />
+      <item name="SUPPLY_BOTTOM_UP_PEGGING" type="REPORT" />
+      <item name="SHORTAGE_EXCESS_REPORT" type="REPORT" />
+      <item name="SHORT_ALERT_WORKBENCH" type="REPORT" />
+      <item name="PO_PROPOSAL" type="REPORT" />
+      <item name="IWT_PROPOSAL" type="REPORT" />
+      <item name="WO_PROPOSAL" type="REPORT" />
+      <item name="PROCESS_ORDER_PROPOSAL" type="REPORT" />
+      <item name="BACKLOG_FGI_OVERVIEW" type="REPORT" />
+      <item name="MEMOS" type="REPORT" />
+      <item name="CAPACITY_REQUIREMENTS" type="CAPACITY_REQUIREMENTS" />
+      <item name="CAPACITY_UTILIZATION" type="REPORT" />
+      <item name="CAPACITY_UTIL_PRODUCT" type="REPORT" />
+    </node>
+  </node>
+  <node name="ADVANCED_ANALYSIS_NODE">
+    <node name="REPORTS">
+      <item name="DEMAND" type="REPORT" />
+      <item name="PEGGING" type="REPORT" />
+      <item name="REQUIREMENT" type="REPORT" />
+      <item name="WOP_DETAIL" type="REPORT" />
+      <item name="CONSUMPTION" type="REPORT" />
+    </node>
+  </node>
+  <node name="PROCESS_INDUSTRY_NODE">
+    <node name="MASTER_DATA">
+        <item name="SHELF_LIFE_REQUIREMENTS" type="REPORT"/>
+        <item name="PRE_BUILD_LIMIT" type="REPORT"/>
+		<item name="FREQUENCY" type="REPORT"/>
+        <item name="RECIPE_WORKBENCH" type="RECIPE_WORKBENCH"/>
+		<item name="FIRM_SUPPLY_SHELF_LIFE_REQUIREMENT" type="REPORT"/>
+    </node>
+    <node name="TRANSACTIONAL_DATA">
+        <item name="PROCESS_ORDER" type="REPORT"/>
+        <item name="INVALID_PROCESS_ORDER" type="REPORT"/>
+    </node>
+    <node name="BANDS">
+        <item name="BANDS" type="REPORT"/>
+        <item name="PM_BANDS" type="REPORT"/>
+    </node>
+    <node name="BATCH_MANAGEMENT">
+        <item name="INV_BATCH" type="REPORT"/>
+    </node>
+    <node name="PLANNING_TRIGGERS_NODE">
+		<item name="PI_CONSTRAINT_BASED_PLANNING" type="COMMAND"/>
+		<item name="PI_MATERIAL_REQUIREMENTS_PLANNING" type="COMMAND"/>
+        <item name="PI_CALCULATE_EXP_DATE" type="COMMAND"/>
+        <item name="PI_CLEAN_INTERACTIVE_CHANGES" type="COMMAND"/>
+        <item name="PI_MASS_DELETE_SUPPLY" type="COMMAND"/>
+    </node>
+    <node name="REPORTS">
+        <item name="EXCEPTION_WORKBENCH" type="REPORT"/>
+        <item name="EXPIRED_MATERIAL_WORKBENCH" type="REPORT"/>
+        <item name="SHELF_LIFE_REQUIREMENT_VIOLATIONS_SUPPLY" type="REPORT"/>
+        <item name="SHELF_LIFE_REQUIREMENT_VIOLATIONS_DEMAND" type="REPORT"/>
+    </node>
+  </node>
+  <node name="DEPLOYMENT_NODE">
+      <node name="DEPLOYMENT_PLANNING_NODE">
+          <item name="SUPPLY_GROUP_MAPPING" type="REPORT" visible="true"/>
+		  <item name="DEPLOYMENT_SETUP" type="REPORT" visible="true"/>
+		  <item name="PUSH_QUOTA_SETUP" type="REPORT" visible="true"/>
+          <item name="DEPLOYMENT_CALENDAR" type="REPORT" visible="true"/>
+		  <item name="DEPLOYMENT_PLANNING" type="COMMAND" visible="true"/>
+		  <item name="DEPLOYMENT_REPORT" type="REPORT" visible="true"/>
+      </node>
+      <node name="TRANSPORT_PLANNING_NODE">
+          <item name="TRANSPORT_METHOD" type="REPORT" />
+          <item name="TRANSPORT_ITEM_SETTING" type="REPORT" />
+          <item name="TRANSPORT_PROCESS_SETTING" type="REPORT" />
+		  <item name="TRANSPORT_LOAD_PLANNING" type="COMMAND" visible="true"/>
+		  <item name="TRANSPORT_PLAN_CHART" type="REPORT" visible="true"/>
+		  <item name="TRANSPORT_PLAN_OVERVIEW" type="REPORT" visible="true"/>
+		  <item name="TRANSPORT_PLAN_RESULT" type="REPORT" visible="true"/>
+		  <item name="TRANSPORT_UNPLANNED_RESULT" type="REPORT" visible="true"/>
+      </node>
+  </node>
+  <node name="PRODUCT_WHEEL_NODE">
+    <node name="MASTER_DATA_NODE">
+      <item name="ATTRIBUTE_SETUP" type="REPORT"/>
+      <item name="PW_PART_ATTRIBUTE" type="REPORT"/>
+      <item name="STATE_MAINTENANCE" type="REPORT"/>
+      <item name="PRODUCT_WHEEL" type="REPORT"/>
+      <item name="PW_PRODUCT_WHEEL_CAPACITY" type="REPORT"/>
+    </node>
+    <node name="PLANNING_TRIGGERS_NODE">
+        <item name="CAPACITY_STATE_GENERATE" type="COMMAND"/>
+        <item name="CAPACITY_STATE_CLEANER" type="COMMAND"/>
+    </node>
+    <node name="REPORTS">
+      <item name="PW_STATE_PART" type="REPORT"/>
+      <item name="PW_STATE_EXCLUDED_PART" type="REPORT"/>
+      <item name="PW_CAPACITY_STATE" type="REPORT"/>
+      <item name="CAPACITY_STATE_REQUIREMENTS" type="CAPACITY_REQUIREMENTS"/>
+    </node>
+  </node>
+  <node name="OPTIMIZATION_NODE">
+    <node name="SETTINGS_NODE">
+      <item name="ADVANCED_PARAMETERS" type="REPORT"/>
+    </node>
+    <node name="PLANNING_TRIGGERS_NODE">
+        <item name="RUN_OPTIMIZATION" type="COMMAND"/>
+        <item name="RESET_OPTIMIZER_ADVANCED_PARAMETERS" type="COMMAND"/>
+    </node>
+  </node>
+  <node name="SCENARIOS_NODE">
+    <node name="SCENARIOS">
+      <item name="MANAGE_SCENARIOS" type="SCENARIO_MANAGEMENT" />
+      <item name="REPLAY_ACTION_LOG" type="REPLAY_ACTION_LOG" />
+    </node>
+	<node name="REPORTS">
+      <item name="KPI_METRIC" type="REPORT" />
+      <item name="SCORECARD_MASTER" type="REPORT" />
+      <item name="VIEW_SCORECARDS" type="REPORT" />
+      <item name="METRIC_REPORT" type="METRIC_REPORT" />
+    </node>
+  </node>
+  <node name="CONFIGURATION_NODE">
+    <node name="CONFIGURATION">
+      <item name="REPORT_CONFIGURATION" type="CONFIGURATION" />
+      <item name="MASTER_DETAIL_CONFIGURATION" type="CONFIGURATION" />
+      <item name="NAVIGATION_CONFIGURATION" type="CONFIGURATION" />
+	  <item name="IFRAME_CONFIGURATION" type="CONFIGURATION" />
+      <item name="MENU_CONFIGURATION" type="CONFIGURATION" />
+	  <item name="COCKPIT_CONFIGURATION" type="CONFIGURATION" />
+    </node>
+  </node>
+  <node name="SYSTEM">
+    <node name="CONFIGURATION">
+	  <item name="LEADING_FIELDS_CONFIGURATION" type="CONFIGURATION" />
+	  <item name="SOLUTION_REPORT_CONFIGURATION" type="CONFIGURATION" />
+      <item name="SOLUTION_COMMAND_CONFIGURATION" type="CONFIGURATION" />
+	  <item name="SOLUTION_ENUM_VALUES_CONFIGURATION" type="CONFIGURATION" />
+    </node>
+    <node name="SETTINGS_NODE">
+      <item name="PLANNING_GRID" type="PLANNING_GRID" />
+	  <item name="DICTIONARY" type="REPORT"/>
+	  <item name="EXCEPTION" type="REPORT"/>
+      <item name="BUSINESS_CALENDAR_SETUP" type="BUSINESS_CALENDAR_SETUP" visible="true"/>
+    </node>
+   <node name="REPORTS">
+	  <item name="LOG_TABLE" type="LOG_TABLE"/>
+	  <item name="INTERFACE_RUN_REPORT" type="REPORT"/>
+    </node>
+  </node>
+</MenuConfiguration>
