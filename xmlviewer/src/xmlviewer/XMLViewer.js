@@ -23,13 +23,7 @@ class XMLViewer extends Component {
     };
   }
   render() {
-    const {
-      xml,
-      theme,
-      invalidXml,
-      indentSize,
-      isCollapsible
-    } = this.props;
+    const { xml, theme, invalidXml, indentSize, isCollapsible } = this.props;
 
     let json = null;
 

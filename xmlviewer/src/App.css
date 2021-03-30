@@ -62,3 +62,7 @@ html {
 #side1 {
   border-right: 2px solid black;
 }
+.container span {
+  display: block;
+  white-space: 'pre-wrap';
+}
