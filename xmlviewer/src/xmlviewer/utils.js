@@ -93,11 +93,6 @@ export function formatXMLModified(input, indent) {
     }
   }
   //PART 3: return formatted string (source) after removing empty line breaks
-  xmlArr = xmlArr.filter((string) => string.trim() !== '');
+  xmlArr = xmlArr.filter((str) => str.trim() !== '');
   return xmlArr; //rejoin the array to a string and return it
-}
-
-export function xmlToHtml(array) {
-  // wrap in span html elements
-  return array.map((element, index) => <span>{element}</span>);
 }

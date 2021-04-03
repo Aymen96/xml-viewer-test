@@ -1,0 +1,14 @@
+.line-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+}
+
+.line-container .line-enumeration {
+  min-width: 26px;
+  margin-right: 16px;
+}
+
+.line-container .line-content {
+  display: inline-block;
+}

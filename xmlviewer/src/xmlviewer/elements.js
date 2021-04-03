@@ -1,5 +1,5 @@
 import React, { memo, useState } from 'react';
-import PropTypes, { elementType } from 'prop-types';
+import PropTypes from 'prop-types';
 import Attributes from './attributes';
 import {
   CdataElement,
