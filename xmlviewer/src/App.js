@@ -6,6 +6,7 @@ import axios from 'axios';
 import { diffArrays } from 'diff';
 import { formatXMLModified } from './xmlviewer/utils';
 import Line from './components/Line';
+import EmptyLine from './components/EmptyLine';
 
 let xml1 = null;
 let xml2 = null;
@@ -45,7 +46,22 @@ export default class App extends Component {
     let modified = formatXMLModified(this.state.xml2);
     let changes = diffArrays(original, modified);
     let counter = 1;
-    changes = changes.map((part, index) => {
+    let originalWithDiff = changes.map((part) => {
+      return part.length === 1 ? (
+        part.added ? (
+          <EmptyLine />
+        ) : (
+          <Line count={counter++}>{part.value[0]}</Line>
+        )
+      ) : (
+        part.value.map((value, i) =>
+          part.added ? <EmptyLine /> : <Line count={counter++}>{value}</Line>
+        )
+      );
+    });
+    originalWithDiff = originalWithDiff.flat();
+    counter = 1; // reset counter for diff xml generation
+    let xmlWithDiff = changes.map((part) => {
       // green for additions, red for deletions
       // white for common parts
       const color = part.added ? '#eaf2c2' : part.removed ? '#fadad7' : 'white';
@@ -61,7 +77,7 @@ export default class App extends Component {
         ))
       );
     });
-    changes = changes.flat();
+    xmlWithDiff = xmlWithDiff.flat();
     return (
       <div>
         <p>Original</p>
@@ -71,16 +87,14 @@ export default class App extends Component {
             className="side bg-blue"
             style={{ whiteSpace: 'pre-wrap' }}
           >
-            {original.map((element, index) => (
-              <Line count={index + 1}>{element}</Line>
-            ))}
+            {originalWithDiff}
           </div>
           <div
             id="side2"
             className="side bg-red"
             style={{ whiteSpace: 'pre-wrap' }}
           >
-            {changes}
+            {xmlWithDiff}
           </div>
         </div>
       </div>
