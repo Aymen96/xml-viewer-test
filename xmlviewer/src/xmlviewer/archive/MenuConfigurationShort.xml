@@ -1,0 +1,17 @@
+<MenuConfiguration>
+  <node name="MASTER_DATA_NODE">
+    <node name="CALENDARS_NODE">
+      <item name="BUSINESS_CALENDAR" type="REPORT" />
+      <item name="CALENDAR_SETUP" type="REPORT" />
+    </node>
+    <node name="DEPOTS_NODE">
+      <item name="DEPOT" type="REPORT" />
+      <item name="DEPOT_FAMILY" type="REPORT" />
+      <item name="DEPOT_SUBSTITUTION_GROUP" type="REPORT" />
+    </node>
+    <node name="CHANNELS_NODE">
+      <item name="CUSTOMER" type="REPORT" />
+      <item name="CHANNEL_MAPPING" type="REPORT" />
+    </node>
+  </node>
+</MenuConfiguration>

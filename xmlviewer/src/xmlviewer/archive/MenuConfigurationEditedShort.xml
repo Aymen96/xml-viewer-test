@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MenuConfiguration>
+    <node name="MASTER_DATA_NODE" visible="true">
+        <node name="CALENDARS_NODE" visible="true">
+            <item name="BUSINESS_CALENDAR" type="REPORT" visible="true"/>
+            <item name="CALENDAR_SETUP" type="REPORT" visible="true"/>
+        </node>
+        <node name="CHANNELS_NODE" visible="true">
+            <item name="CUSTOMER" type="REPORT" visible="true"/>
+            <item name="CHANNEL_MAPPING" type="REPORT" visible="true"/>
+        </node>
+        <node name="PARTS_NODE" visible="true">
+            <item name="PART_WORKBENCH" type="REPORT" visible="true"/>
+            <item name="PART_DEPOT" type="REPORT" visible="true"/>
+            <item name="PSG_PART_SUBSTITUTION_GROUP" type="REPORT" visible="true"/>
+            <item name="PROCESS_SETUP" type="REPORT" visible="true"/>
+            <item name="PROCESS_SHARE" type="REPORT" visible="true"/>
+            <item name="PROCESS_SPLIT" type="REPORT" visible="true"/>
+            <item name="MATERIAL_USAGE" type="REPORT" visible="true"/>
+            <item name="INVERTED_BOM" type="REPORT" visible="true"/>
+            <item name="MULTI_LEVEL_BOM" type="REPORT" visible="true"/>
+            <item name="INVERTED_MULTI_LEVEL_BOM" type="REPORT" visible="true"/>
+            <item name="INV_CHANNEL" type="REPORT" visible="false"/>
+            <item name="PART_FAMILY" type="REPORT" visible="false"/>
+            <item name="FAMILY_SETUP" type="REPORT" visible="true"/>
+            <item name="SUPPLIER" type="REPORT" visible="true"/>
+            <item name="CONNECTED_COMPONENT" type="REPORT" visible="true"/>
+        </node>
+    </node>
+</MenuConfiguration>
