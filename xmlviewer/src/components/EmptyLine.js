@@ -6,7 +6,7 @@ export default class EmptyLine extends Component {
     return (
       <div className="line-container">
         <span className="line-content" style={{ backgroundColor: 'white' }}>
-          {' '}
+          &nbsp;
         </span>
       </div>
     );

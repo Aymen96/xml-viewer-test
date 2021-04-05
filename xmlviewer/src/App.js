@@ -46,35 +46,71 @@ export default class App extends Component {
     let modified = formatXMLModified(this.state.xml2);
     let changes = diffArrays(original, modified);
     let counter = 1;
-    let originalWithDiff = changes.map((part) => {
-      return part.length === 1 ? (
-        part.added ? (
-          <EmptyLine />
-        ) : (
-          <Line count={counter++}>{part.value[0]}</Line>
-        )
-      ) : (
-        part.value.map((value, i) =>
-          part.added ? <EmptyLine /> : <Line count={counter++}>{value}</Line>
-        )
+    let numberOfEmptyLines = 0;
+    let originalWithDiff = changes.map((part, index) => {
+      numberOfEmptyLines = 0;
+      if (part.added) {
+        if (index === 0 || !changes[index - 1].removed) {
+          numberOfEmptyLines = part.count;
+        } else if (changes[index - 1].removed) {
+          numberOfEmptyLines = part.count - changes[index - 1].count;
+          numberOfEmptyLines = numberOfEmptyLines > 0 ? numberOfEmptyLines : 0;
+        }
+      }
+      return (
+        <React.Fragment>
+          {!part.added &&
+            (part.length === 1 ? (
+              <Line count={counter++} added={part.added} removed={part.removed}>
+                {part.value[0]}
+              </Line>
+            ) : (
+              part.value.map((value, i) => (
+                <Line
+                  count={counter++}
+                  added={part.added}
+                  removed={part.removed}
+                >
+                  {value}
+                </Line>
+              ))
+            ))}
+          {part.added && Array(numberOfEmptyLines).fill(<EmptyLine />)}
+        </React.Fragment>
       );
     });
     originalWithDiff = originalWithDiff.flat();
-    counter = 1; // reset counter for diff xml generation
-    let xmlWithDiff = changes.map((part) => {
-      // green for additions, red for deletions
-      // white for common parts
-      const color = part.added ? '#eaf2c2' : part.removed ? '#fadad7' : 'white';
-      return part.length === 1 ? (
-        <Line count={part.removed ? false : counter++} bgColor={color}>
-          {part.value[0]}
-        </Line>
-      ) : (
-        part.value.map((value, i) => (
-          <Line count={part.removed ? false : counter++} bgColor={color}>
-            {value}
-          </Line>
-        ))
+    // reset counters for diff xml generation
+    counter = 1;
+
+    let xmlWithDiff = changes.map((part, index) => {
+      numberOfEmptyLines = 0;
+      if (part.added) {
+        if (index !== 0) {
+          numberOfEmptyLines = changes[index - 1].count - part.count;
+          numberOfEmptyLines = numberOfEmptyLines > 0 ? numberOfEmptyLines : 0;
+        }
+      }
+      return (
+        <React.Fragment>
+          {!part.removed &&
+            (part.length === 1 ? (
+              <Line count={counter++} added={part.added} removed={part.removed}>
+                {part.value[0]}
+              </Line>
+            ) : (
+              part.value.map((value, i) => (
+                <Line
+                  count={counter++}
+                  added={part.added}
+                  removed={part.removed}
+                >
+                  {value}
+                </Line>
+              ))
+            ))}
+          {part.added && Array(numberOfEmptyLines).fill(<EmptyLine />)}
+        </React.Fragment>
       );
     });
     xmlWithDiff = xmlWithDiff.flat();

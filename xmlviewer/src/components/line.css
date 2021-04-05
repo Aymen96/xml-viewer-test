@@ -2,6 +2,7 @@
   display: flex;
   justify-content: flex-start;
   flex-wrap: nowrap;
+  margin: 2px 0;
 }
 
 .line-container .line-enumeration {
@@ -11,4 +12,5 @@
 
 .line-container .line-content {
   display: inline-block;
+  min-width: 95%;
 }
