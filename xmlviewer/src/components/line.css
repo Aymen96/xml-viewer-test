@@ -13,4 +13,7 @@
 .line-container .line-content {
   display: inline-block;
   min-width: 95%;
+  text-overflow: ellipsis;
+  overflow: visible;
+  max-height: 21px;
 }

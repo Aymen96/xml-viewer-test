@@ -90,6 +90,8 @@ export default class App extends Component {
           numberOfEmptyLines = changes[index - 1].count - part.count;
           numberOfEmptyLines = numberOfEmptyLines > 0 ? numberOfEmptyLines : 0;
         }
+      } else if (part.removed && !changes[index + 1].added) {
+        numberOfEmptyLines = part.count;
       }
       return (
         <React.Fragment>
@@ -110,6 +112,9 @@ export default class App extends Component {
               ))
             ))}
           {part.added && Array(numberOfEmptyLines).fill(<EmptyLine />)}
+          {part.removed &&
+            !changes[index + 1].added &&
+            Array(numberOfEmptyLines).fill(<EmptyLine />)}
         </React.Fragment>
       );
     });
